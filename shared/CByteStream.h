@@ -4,6 +4,8 @@
 #include <vector>
 #include <string>
 
+// DO NAPRAWY
+
 class CByteStream
 {
 	std::vector<uint8_t> buffer;
