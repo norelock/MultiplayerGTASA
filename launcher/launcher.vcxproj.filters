@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\Launcher.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\launcher\CInjector.cpp">
+      <Filter>Source Files\launcher</Filter>
+    </ClCompile>
+    <ClCompile Include="src\windows\CLoadingWindow.cpp">
+      <Filter>Source Files\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\launcher\ExecutableLoader.cpp">
+      <Filter>Source Files\launcher</Filter>
+    </ClCompile>
+    <ClCompile Include="src\launcher\DummyVariables.cpp">
+      <Filter>Source Files\launcher</Filter>
+    </ClCompile>
+    <ClCompile Include="src\launcher\LinkerConfig.cpp">
+      <Filter>Source Files\launcher</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Launcher.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\launcher\CConfig.h">
+      <Filter>Source Files\launcher</Filter>
+    </ClInclude>
+    <ClInclude Include="src\launcher\CInjector.h">
+      <Filter>Source Files\launcher</Filter>
+    </ClInclude>
+    <ClInclude Include="src\stdafx.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\windows\CLoadingWindow.h">
+      <Filter>Source Files\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\launcher\ExecutableLoader.h">
+      <Filter>Source Files\launcher</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="altsa-launcher.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{A645D09F-0551-36B3-B120-4E59BC75975F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{AE36554F-C41C-3A03-AAD1-2F8749B2B658}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\launcher">
+      <UniqueIdentifier>{761B4991-F2DE-3428-8C38-87070D7DAD33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\windows">
+      <UniqueIdentifier>{0B836132-14FD-3B30-892F-D6287BD1BB23}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

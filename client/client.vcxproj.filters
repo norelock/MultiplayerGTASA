@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="entities">
+      <UniqueIdentifier>{5286b7f4-8dd1-4ef5-9f9b-2d8415d26863}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gamelogic">
+      <UniqueIdentifier>{9d983e96-08b3-4e59-b22b-4d6b507d753e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="networking">
+      <UniqueIdentifier>{ef9b9c3c-d3f2-40ca-86d8-ea90b65a6852}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="networking\entities">
+      <UniqueIdentifier>{22010fda-2742-47ea-8125-57db0c6892c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="options">
+      <UniqueIdentifier>{63db517a-0b4c-47c7-8179-4bb36ac3c161}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="patches">
+      <UniqueIdentifier>{4d5dea67-5b18-4a59-a77a-fd2bd039ad9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rendering">
+      <UniqueIdentifier>{5b4ad2d8-7a56-4c9f-9657-afac6812b11d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rendering\imgui">
+      <UniqueIdentifier>{020aa454-7f0c-4152-ac19-f5871150f2d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rendering\ingame">
+      <UniqueIdentifier>{75b9656a-a069-4c04-ae06-f8d6067b9b90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tasks">
+      <UniqueIdentifier>{80f739e1-f7cc-440c-9160-b601547cf900}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="entities\sub">
+      <UniqueIdentifier>{80fbe29c-f622-4eb0-94a6-f323a7738325}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="models">
+      <UniqueIdentifier>{7d693b9b-b242-4e10-955d-b9c31b048bec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rendering\imgui\vendor">
+      <UniqueIdentifier>{a94f8dac-7388-44ff-998f-5b9b278eb41c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scripting">
+      <UniqueIdentifier>{c438cf85-f481-43c2-a020-b97f3f4dd495}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scripting\lua">
+      <UniqueIdentifier>{a40aca13-1102-4855-bdd2-a9e6c8b57a00}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="entities\CPedManager.cpp">
+      <Filter>entities</Filter>
+    </ClCompile>
+    <ClCompile Include="entities\CPlayerPedManager.cpp">
+      <Filter>entities</Filter>
+    </ClCompile>
+    <ClCompile Include="entities\CVehicleManager.cpp">
+      <Filter>entities</Filter>
+    </ClCompile>
+    <ClCompile Include="gamelogic\CPopulationManager.cpp">
+      <Filter>gamelogic</Filter>
+    </ClCompile>
+    <ClCompile Include="networking\CNetworkManager.cpp">
+      <Filter>networking</Filter>
+    </ClCompile>
+    <ClCompile Include="networking\entities\CClientPlayer.cpp">
+      <Filter>networking\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="networking\entities\CClientVehicle.cpp">
+      <Filter>networking\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="networking\entities\CNetworkEntityManager.cpp">
+      <Filter>networking\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="options\COptions.cpp">
+      <Filter>options</Filter>
+    </ClCompile>
+    <ClCompile Include="patches\CGamePatches.cpp">
+      <Filter>patches</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\CRenderManager.cpp">
+      <Filter>rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\imgui\CImGui.cpp">
+      <Filter>rendering\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\ingame\CNameTags.cpp">
+      <Filter>rendering\ingame</Filter>
+    </ClCompile>
+    <ClCompile Include="tasks\CSerializedComplexCopInCar.cpp">
+      <Filter>tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="tasks\CTaskSerializer.cpp">
+      <Filter>tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="..\shared\imgui\imgui.cpp">
+      <Filter>rendering\imgui\vendor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\shared\imgui\imgui_demo.cpp">
+      <Filter>rendering\imgui\vendor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\shared\imgui\imgui_draw.cpp">
+      <Filter>rendering\imgui\vendor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\shared\imgui\imgui_widgets.cpp">
+      <Filter>rendering\imgui\vendor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\shared\imgui\examples\imgui_impl_dx9.cpp">
+      <Filter>rendering\imgui\vendor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\shared\imgui\examples\imgui_impl_dx11.cpp">
+      <Filter>rendering\imgui\vendor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\shared\imgui\examples\imgui_impl_win32.cpp">
+      <Filter>rendering\imgui\vendor</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\ingame\CChat.cpp">
+      <Filter>rendering\ingame</Filter>
+    </ClCompile>
+    <ClCompile Include="scripting\lua\LuaScript.cpp">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="entities\CPedManager.h">
+      <Filter>entities</Filter>
+    </ClInclude>
+    <ClInclude Include="entities\CPlayerPedManager.h">
+      <Filter>entities</Filter>
+    </ClInclude>
+    <ClInclude Include="entities\CVehicleManager.h">
+      <Filter>entities</Filter>
+    </ClInclude>
+    <ClInclude Include="entities\sub\CWeaponManager.h">
+      <Filter>entities\sub</Filter>
+    </ClInclude>
+    <ClInclude Include="gamelogic\CPopulationManager.h">
+      <Filter>gamelogic</Filter>
+    </ClInclude>
+    <ClInclude Include="models\CModelManager.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="networking\CNetworkManager.h">
+      <Filter>networking</Filter>
+    </ClInclude>
+    <ClInclude Include="networking\entities\CClientPlayer.h">
+      <Filter>networking\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="networking\entities\CClientVehicle.h">
+      <Filter>networking\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="networking\entities\CNetworkEntityManager.h">
+      <Filter>networking\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="options\COptions.h">
+      <Filter>options</Filter>
+    </ClInclude>
+    <ClInclude Include="patches\CGamePatches.h">
+      <Filter>patches</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\CRenderManager.h">
+      <Filter>rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\imgui\CImGui.h">
+      <Filter>rendering\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\ingame\tasks.h">
+      <Filter>rendering\ingame</Filter>
+    </ClInclude>
+    <ClInclude Include="tasks\CSerializedComplexCopInCar.h">
+      <Filter>tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="tasks\CTaskSerializer.h">
+      <Filter>tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h" />
+    <ClInclude Include="rendering\ingame\CNameTags.h">
+      <Filter>rendering\ingame</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\ingame\CChat.h">
+      <Filter>rendering\ingame</Filter>
+    </ClInclude>
+    <ClInclude Include="scripting\lua\LuaScript.h">
+      <Filter>scripting\lua</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

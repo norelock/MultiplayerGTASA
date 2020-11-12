@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="doc">
+      <UniqueIdentifier>{FB6A880B-6774-887C-F0EF-9E7C5CF8937C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\limits">
+      <UniqueIdentifier>{2EA2D468-1A5A-16B6-8361-EF116F38B1A6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\limits\Coronas">
+      <UniqueIdentifier>{3232813B-1E16-4291-8776-3CE473792C13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\limits\Coronas\yacl">
+      <UniqueIdentifier>{CAE448AE-361C-9145-3F26-F568ABDCB73E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\limits\EntityPtrs">
+      <UniqueIdentifier>{A35646E1-0FC3-01DC-D8B6-993944E22344}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\limits\IPL">
+      <UniqueIdentifier>{2210B129-0EDE-A42F-F771-1556E3DE8094}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\limits\MatrixList">
+      <UniqueIdentifier>{CE0D58B2-3A7A-13AD-036E-AB0A6F993515}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\limits\Misc">
+      <UniqueIdentifier>{A9B5D55F-1541-4324-1E52-C6188A5C9F24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\limits\ModelInfo">
+      <UniqueIdentifier>{1AA63E60-0635-C829-AF53-DC249BC1D8CF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\limits\Pools">
+      <UniqueIdentifier>{2AEFC55A-16E8-E4AC-3F1A-CA312B72C4B8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\limits\Shadows">
+      <UniqueIdentifier>{364097F9-2224-584F-8B84-52A2778742D1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\limits\Water">
+      <UniqueIdentifier>{C0013D5B-ACFA-5BAD-D52C-4132C1843BB9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\shared">
+      <UniqueIdentifier>{D3351079-BFED-51C6-28F5-2A2214CCECB6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\shared\cpatch">
+      <UniqueIdentifier>{F5CB6613-61E2-64A9-AA59-F0CA16AF3531}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\shared\cpatch\SCM">
+      <UniqueIdentifier>{47EE40C1-B35A-FCBB-7C4E-9419E8791E24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\shared\injector">
+      <UniqueIdentifier>{E060CF8B-4CC2-AC99-D52F-F34B4190E358}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\shared\injector\gvm">
+      <UniqueIdentifier>{795C70B4-E593-B84B-EE9D-1C6F5A54DF44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\shared\structs">
+      <UniqueIdentifier>{1AE86C5A-06CC-2DB0-6F2C-28035B2F1832}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\shared\utility">
+      <UniqueIdentifier>{36AFB9F3-2293-7A49-8BF3-749C77F664CB}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\LimitAdjuster.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\limits\Coronas\yacl\Camera.h">
+      <Filter>src\limits\Coronas\yacl</Filter>
+    </ClInclude>
+    <ClInclude Include="src\limits\Coronas\yacl\Coronas.h">
+      <Filter>src\limits\Coronas\yacl</Filter>
+    </ClInclude>
+    <ClInclude Include="src\limits\Coronas\yacl\General.h">
+      <Filter>src\limits\Coronas\yacl</Filter>
+    </ClInclude>
+    <ClInclude Include="src\limits\ModelInfo\DynamicStore.hpp">
+      <Filter>src\limits\ModelInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\limits\ModelInfo\StoreAdjuster.hpp">
+      <Filter>src\limits\ModelInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\limits\Pools\DynamicPool.hpp">
+      <Filter>src\limits\Pools</Filter>
+    </ClInclude>
+    <ClInclude Include="src\limits\Pools\PoolAdjuster.hpp">
+      <Filter>src\limits\Pools</Filter>
+    </ClInclude>
+    <ClInclude Include="src\limits\Pools\PoolAdjusterDynamic.hpp">
+      <Filter>src\limits\Pools</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shared\cpatch\CPatch.h">
+      <Filter>src\shared\cpatch</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shared\cpatch\SCM\CPatch.h">
+      <Filter>src\shared\cpatch\SCM</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shared\cpatch\SCM\printf_messagebox.h">
+      <Filter>src\shared\cpatch\SCM</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shared\cpatch\hook.h">
+      <Filter>src\shared\cpatch</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shared\injector\assembly.hpp">
+      <Filter>src\shared\injector</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shared\injector\calling.hpp">
+      <Filter>src\shared\injector</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shared\injector\gvm\gvm.hpp">
+      <Filter>src\shared\injector\gvm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shared\injector\gvm\translator.hpp">
+      <Filter>src\shared\injector\gvm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shared\injector\hooking.hpp">
+      <Filter>src\shared\injector</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shared\injector\injector.hpp">
+      <Filter>src\shared\injector</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shared\injector\utility.hpp">
+      <Filter>src\shared\injector</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shared\structs\CLinkList.h">
+      <Filter>src\shared\structs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shared\structs\CPool.h">
+      <Filter>src\shared\structs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shared\utility\LinkListAdjuster.hpp">
+      <Filter>src\shared\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shared\utility\PointerAdjuster.hpp">
+      <Filter>src\shared\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shared\utility\StaticArrayAdjuster.hpp">
+      <Filter>src\shared\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shared\utility\dummy_object.hpp">
+      <Filter>src\shared\utility</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\dllmain.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\limits\Coronas\Coronas.cpp">
+      <Filter>src\limits\Coronas</Filter>
+    </ClCompile>
+    <ClCompile Include="src\limits\Coronas\yacl\General.cpp">
+      <Filter>src\limits\Coronas\yacl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\limits\EntityPtrs\AlphaEntityList.cpp">
+      <Filter>src\limits\EntityPtrs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\limits\EntityPtrs\InVisibleEntityPtrs.cpp">
+      <Filter>src\limits\EntityPtrs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\limits\EntityPtrs\StreamingObjectInstancesList.cpp">
+      <Filter>src\limits\EntityPtrs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\limits\IPL\EntitiesPerIPL.cpp">
+      <Filter>src\limits\IPL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\limits\IPL\EntityIpl.cpp">
+      <Filter>src\limits\IPL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\limits\MatrixList\MatrixList.cpp">
+      <Filter>src\limits\MatrixList</Filter>
+    </ClCompile>
+    <ClCompile Include="src\limits\Misc\FrameLimit.cpp">
+      <Filter>src\limits\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\limits\Misc\MemoryAvailable.cpp">
+      <Filter>src\limits\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\limits\ModelInfo\AtomicModels.cpp">
+      <Filter>src\limits\ModelInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\limits\ModelInfo\ClumpModels.cpp">
+      <Filter>src\limits\ModelInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\limits\ModelInfo\DamageAtomicModels.cpp">
+      <Filter>src\limits\ModelInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\limits\ModelInfo\PedModels.cpp">
+      <Filter>src\limits\ModelInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\limits\ModelInfo\TimeModels.cpp">
+      <Filter>src\limits\ModelInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\limits\ModelInfo\VehicleModels.cpp">
+      <Filter>src\limits\ModelInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\limits\ModelInfo\WeaponModels.cpp">
+      <Filter>src\limits\ModelInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\limits\Pools\Pools.cpp">
+      <Filter>src\limits\Pools</Filter>
+    </ClCompile>
+    <ClCompile Include="src\limits\Shadows\StaticShadows.cpp">
+      <Filter>src\limits\Shadows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\limits\Water\WaterBlocks.cpp">
+      <Filter>src\limits\Water</Filter>
+    </ClCompile>
+    <ClCompile Include="src\shared\cpatch\SCM\CPatch.cpp">
+      <Filter>src\shared\cpatch\SCM</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="doc\Creating Your Own Adjuster.md" />
+    <None Include="doc\SA.LimitAdjuster.ini" />
+  </ItemGroup>
+</Project>
