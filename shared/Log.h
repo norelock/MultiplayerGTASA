@@ -1,5 +1,7 @@
 #pragma once
 
+// DO NAPRAWY
+
 #include <string>
 #include <iomanip>
 #include <codecvt>
