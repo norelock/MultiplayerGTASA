@@ -13,13 +13,9 @@ static std::vector<std::pair<int, std::wstring>> supportedVersions =
 	{ 1365, L"Steam" }
 };
 
-static std::vector<std::wstring> requiredFiles = 
+static std::vector<std::wstring> requiredFiles =
 {
-	L"libs\\client.dll",
-	L"libs\\openLA.dll",
-	L"libs\\minidump.dll",
-#ifdef _DEBUG
-	L"libs\\windowed.dll",
-#endif
-	L"res\\custom.txd",
+	L"libs\\vorbisFile.dll",
+	L"libs\\lua5.1.dll",
+	L"client.dll"
 };

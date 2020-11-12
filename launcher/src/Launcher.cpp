@@ -103,7 +103,23 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 	std::wstring altPath = std::wstring(_altPath);
 	//alt::Log::Instance().AddOut(new alt::Log::FileStream(altPath + L"\\logs\\launcher.log"));
 
-	/*for (std::wstring& file : requiredFiles)
+	Gdiplus::GdiplusStartupInput gdiplusStartupInput;
+	ULONG_PTR gdiplusToken;
+
+	Gdiplus::GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, NULL);
+
+	auto& window = CLoadingWindow::Instance();
+	auto& config = CConfig::Instance();
+	auto& injector = CInjector::Instance();
+
+	// Open loading window
+	ShowWindow(window.GetHwnd(), nCmdShow);
+	UpdateWindow(window.GetHwnd());
+
+	window.Init(hInstance);
+
+	// Load required libraries from defined list
+	for (std::wstring& file : requiredFiles)
 	{
 		if (!File::Exists(file))
 		{
@@ -115,36 +131,16 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 
 			ss << L"  - " << file << std::endl;
 		}
+
+		injector.PushLibrary(file);
 	}
 
+	// If files don't exists or are missing then we throwing the error window
 	if (missing)
 	{
 		MessageBox(NULL, ss.str().c_str(), L"Installation corrupted", MB_OK | MB_ICONERROR);
 		return 1;
-	}*/
-
-	Gdiplus::GdiplusStartupInput gdiplusStartupInput;
-	ULONG_PTR gdiplusToken;
-
-	Gdiplus::GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, NULL);
-
-	auto& window = CLoadingWindow::Instance();
-	auto& config = CConfig::Instance();
-	auto& injector = CInjector::Instance();
-
-/*
-#ifdef _DEBUG
-	injector.PushLibrary(L"windowed.dll");
-#endif
-*/
-
-	//injector.PushLibrary(L"vorbisFile.dll");
-    //injector.PushLibrary(L"minidump.dll");
-	injector.PushLibrary(L"libs\\lua5.1.dll");
-    injector.PushLibrary(L"client.dll");
-    //injector.PushLibrary(L"openLA.dll");
-
-	window.Init(hInstance);
+	}
 
 	// Load config
 	if (!config.Load(L"config.json"))
@@ -175,12 +171,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 		}
 	}
 
-
 	gtapath = config.GetPath();
-
-	// Open loading window
-	ShowWindow(window.GetHwnd(), nCmdShow);
-	UpdateWindow(window.GetHwnd());
 
 	std::thread([&] {
 		MSG msg;
@@ -194,9 +185,10 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 
 	window.Destroy();
 	Gdiplus::GdiplusShutdown(gdiplusToken);
+
 	// Run and inject
 	if (!injector.Run(config.GetPath(), altPath))
-		MessageBox(NULL, L"Failed to load alt:SA Client\nSee client.log", L"alt:SA Load Error", MB_OK | MB_ICONERROR);
+		MessageBox(NULL, L"Failed to load client\nSee client.log", L"Load Error", MB_OK | MB_ICONERROR);
 	
 	return 0;
 }

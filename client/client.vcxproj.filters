@@ -4,9 +4,6 @@
     <Filter Include="entities">
       <UniqueIdentifier>{5286b7f4-8dd1-4ef5-9f9b-2d8415d26863}</UniqueIdentifier>
     </Filter>
-    <Filter Include="gamelogic">
-      <UniqueIdentifier>{9d983e96-08b3-4e59-b22b-4d6b507d753e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="networking">
       <UniqueIdentifier>{ef9b9c3c-d3f2-40ca-86d8-ea90b65a6852}</UniqueIdentifier>
     </Filter>
@@ -56,9 +53,6 @@
     </ClCompile>
     <ClCompile Include="entities\CVehicleManager.cpp">
       <Filter>entities</Filter>
-    </ClCompile>
-    <ClCompile Include="gamelogic\CPopulationManager.cpp">
-      <Filter>gamelogic</Filter>
     </ClCompile>
     <ClCompile Include="networking\CNetworkManager.cpp">
       <Filter>networking</Filter>
@@ -134,9 +128,6 @@
     </ClInclude>
     <ClInclude Include="entities\sub\CWeaponManager.h">
       <Filter>entities\sub</Filter>
-    </ClInclude>
-    <ClInclude Include="gamelogic\CPopulationManager.h">
-      <Filter>gamelogic</Filter>
     </ClInclude>
     <ClInclude Include="models\CModelManager.h">
       <Filter>models</Filter>

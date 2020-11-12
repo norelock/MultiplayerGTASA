@@ -22,7 +22,6 @@
     <ClCompile Include="entities\CPedManager.cpp" />
     <ClCompile Include="entities\CPlayerPedManager.cpp" />
     <ClCompile Include="entities\CVehicleManager.cpp" />
-    <ClCompile Include="gamelogic\CPopulationManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="networking\CNetworkManager.cpp" />
     <ClCompile Include="networking\entities\CClientPlayer.cpp" />
@@ -43,7 +42,6 @@
     <ClInclude Include="entities\CPlayerPedManager.h" />
     <ClInclude Include="entities\CVehicleManager.h" />
     <ClInclude Include="entities\sub\CWeaponManager.h" />
-    <ClInclude Include="gamelogic\CPopulationManager.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="models\CModelManager.h" />
     <ClInclude Include="networking\CNetworkManager.h" />
