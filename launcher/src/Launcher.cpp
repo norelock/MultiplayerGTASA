@@ -112,11 +112,11 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 	auto& config = CConfig::Instance();
 	auto& injector = CInjector::Instance();
 
+	window.Init(hInstance);
+
 	// Open loading window
 	ShowWindow(window.GetHwnd(), nCmdShow);
 	UpdateWindow(window.GetHwnd());
-
-	window.Init(hInstance);
 
 	// Load required libraries from defined list
 	for (std::wstring& file : requiredFiles)
@@ -138,6 +138,8 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 	// If files don't exists or are missing then we throwing the error window
 	if (missing)
 	{
+		window.Destroy();
+
 		MessageBox(NULL, ss.str().c_str(), L"Installation corrupted", MB_OK | MB_ICONERROR);
 		return 1;
 	}
