@@ -9,7 +9,7 @@
 #define VERSION_PATCH					1
 
 #define VERSION_DATA					TOSTR(VERSION_MAJOR) "." TOSTR(VERSION_MINOR) "." TOSTR(VERSION_PATCH)
-#define PROJECT_NAME					"alt:SA"
+#define PROJECT_NAME					"Render Multiplayer"
 #ifdef ALTSA_CLIENT						
 #define PROJECT_TYPE					"client"
 #else

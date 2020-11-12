@@ -140,7 +140,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 	{
 		window.Destroy();
 
-		MessageBox(NULL, ss.str().c_str(), L"Installation corrupted", MB_OK | MB_ICONERROR);
+		MessageBox(NULL, ss.str().c_str(), L"Error while running client", MB_OK | MB_ICONERROR);
 		return 1;
 	}
 
@@ -190,7 +190,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 
 	// Run and inject
 	if (!injector.Run(config.GetPath(), altPath))
-		MessageBox(NULL, L"Failed to load client\nSee client.log", L"Load Error", MB_OK | MB_ICONERROR);
+		MessageBox(NULL, L"Failed to load Render Multiplayer client\nSee client.log", L"Load Error", MB_OK | MB_ICONERROR);
 	
 	return 0;
 }

@@ -597,7 +597,7 @@ void CGamePatches::GameLogicPatches()
 	patch::PutRetn(0x744AE0);
 
 	// SetWindowText
-	patch::Set(0x619608, "Multiplayer test");
+	patch::Set(0x619608, PROJECT_NAME);
 
 	// Disable CIniFile::LoadIniFile (gta3.ini)
 	//patch::PutRetn(0x56D070);
