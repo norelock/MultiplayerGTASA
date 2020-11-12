@@ -147,9 +147,9 @@
     <ClInclude Include="CByteStream.h" />
     <ClInclude Include="config.h" />
     <ClInclude Include="CPackage.h" />
+    <ClInclude Include="CSingleton.h" />
     <ClInclude Include="Log.h" />
     <ClInclude Include="types.h" />
-    <ClInclude Include="CSingleton.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="imgui\examples\imgui_impl_dx11.cpp">

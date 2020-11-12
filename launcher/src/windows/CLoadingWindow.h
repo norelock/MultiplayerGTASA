@@ -3,7 +3,6 @@ class CLoadingWindow : public CSingleton<CLoadingWindow>
 {
 	HWND hWnd;
 	HINSTANCE hInstance;
-
 	Gdiplus::Image* splash;
 	Gdiplus::SolidBrush* backBrush;
 	Gdiplus::SolidBrush* frontBrush;

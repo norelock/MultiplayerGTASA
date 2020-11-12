@@ -964,7 +964,6 @@ void CGamePatches::InputPatches()
 
 void CGamePatches::PopulationPatches()
 {
-    /*
 	// Disable CPopulation::Initialise x
 	patch::PutRetn(0x610E10);
 
@@ -1044,8 +1043,9 @@ void CGamePatches::PopulationPatches()
 
 	// Disable CCarCtrl::GenerateOneRandomCar
 	patch::PutRetn(0x430050);
-    */
-    patch::ReplaceFunctionCall(0x53C1C1, CCarCtrl__GenerateRandomCars_Hook);
+
+    /*
+	patch::ReplaceFunctionCall(0x53C1C1, CCarCtrl__GenerateRandomCars_Hook);
     patch::ReplaceFunctionCall(0x53C030, CPopulation__Update_Hook);
     patch::ReplaceFunctionCall(0x53C054, CPopulation__Update_Hook);
     patch::ReplaceFunctionCall(0x615D4B, CPopulation__AddToPopulation_Hook);
@@ -1057,6 +1057,7 @@ void CGamePatches::PopulationPatches()
 			return AdjustBranchPointer(Address, 0x612710, CPopulation__AddPed_Hook, false);
 		}
     );
+	*/
 }
 
 void CGamePatches::LimitPatches()
@@ -1100,7 +1101,6 @@ void CGamePatches::PlayerInfoPatch()
     patch::SetUChar(0x84E1FA + 1, MAX_PLAYERS_NUM);
     patch::SetUChar(0x856465 + 1, MAX_PLAYERS_NUM);
 
-	
 	CWorld::Players = CWorld__Players;
 
     Patch_Funcs.push_back( 

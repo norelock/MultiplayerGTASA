@@ -19,7 +19,7 @@ public:
         CVehicleManager::Init();
         CPlayerPedManager::Init();
         CPedManager::Init();
-        CPopulationManager::Init();
+        //CPopulationManager::Init(); - USUNIÊTE
         CRenderManager::Init();
         CNetworkManager::Init();
         COptions::Init();

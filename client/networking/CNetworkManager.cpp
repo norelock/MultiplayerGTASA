@@ -3,10 +3,22 @@
 #define ZPLM_IMPLEMENTATION
 #define ENET_IMPLEMENTATION
 #define LIBRG_DEBUG
+
 #include "main.h"
 #include "CTaskSimpleDuck.h"
 #include "CTaskSimpleDuckToggle.h"
 #include <thread>
+
+extern "C"
+{
+	#include "Lua/include/lua.h"
+	#include "Lua/include/lualib.h"
+	#include "Lua/include/lauxlib.h"
+}
+
+#ifdef _WIN32
+	#pragma comment(lib, "Lua/lua5.1.lib")
+#endif
 
 char CNetworkManager::m_szPlayerName[MAX_PLAYER_NAME];
 char CNetworkManager::m_szServerAddress[15];
@@ -174,29 +186,27 @@ void CNetworkManager::on_entity_update(librg_event_t *event)
 
 	switch (event->entity->type)
 	{
-	case eNetworkEntityType::PLAYER:
-	{
-		CClientPlayer* player = (CClientPlayer*)event->entity->user_data;
-		if (player && player->m_bStreamedIn)
+		case eNetworkEntityType::PLAYER:
 		{
-			player->position = event->entity->position;
-			player->m_iLastPacketTime = GetTickCount();
+			CClientPlayer* player = (CClientPlayer*)event->entity->user_data;
+			if (player && player->m_bStreamedIn)
+			{
+				player->position = event->entity->position;
+				player->m_iLastPacketTime = GetTickCount();
 
-			player->syncType = (eSyncType)librg_data_ru8(event->data);
+				player->syncType = (eSyncType)librg_data_ru8(event->data);
 
 
-			int size;
-            if (player->syncType == eSyncType::SYNC_TYPE_ON_FOOT) size = sizeof(OnfootPlayerSyncPacket);
-            else if (player->syncType == eSyncType::SYNC_TYPE_ON_FOOT_AIMING)size = sizeof(OnfootPlayerAimingSyncPacket);
-            else if (player->syncType == eSyncType::SYNC_TYPE_IN_WATER)size = sizeof(InWaterPlayerSyncPacket);
+				int size;
+				if (player->syncType == eSyncType::SYNC_TYPE_ON_FOOT) size = sizeof(OnfootPlayerSyncPacket);
+				else if (player->syncType == eSyncType::SYNC_TYPE_ON_FOOT_AIMING)size = sizeof(OnfootPlayerAimingSyncPacket);
+				else if (player->syncType == eSyncType::SYNC_TYPE_IN_WATER)size = sizeof(InWaterPlayerSyncPacket);
 
-            
-
-			librg_data_rptr(event->data, player->syncData, size);
-			player->bSync = true;
+				librg_data_rptr(event->data, player->syncData, size);
+				player->bSync = true;
+			}
+			break;
 		}
-		break;
-	}
 	}
 }
 
@@ -205,16 +215,16 @@ void CNetworkManager::on_entity_remove(librg_event_t *event)
 {
 	switch (event->entity->type)
 	{
-	case eNetworkEntityType::PLAYER:
-	{
-		CClientPlayer* player = (CClientPlayer*)event->entity->user_data;
-		if (player)
+		case eNetworkEntityType::PLAYER:
 		{
-			player->StreamOut();
-			event->entity->user_data = nullptr;
+			CClientPlayer* player = (CClientPlayer*)event->entity->user_data;
+			if (player)
+			{
+				player->StreamOut();
+				event->entity->user_data = nullptr;
+			}
+			break;
 		}
-		break;
-	}
 	}
 }
 
@@ -285,17 +295,6 @@ void CNetworkManager::task_sync(librg_message_t* msg)
 
 }
 
-extern "C"
-{
-#include "Lua/include/lua.h"
-#include "Lua/include/lualib.h"
-#include "Lua/include/lauxlib.h"
-}
-
-#ifdef _WIN32
-#pragma comment(lib, "Lua/lua5.1.lib")
-#endif
-
 struct Script {
 	char* name;
 	char* code;
@@ -316,7 +315,6 @@ void CNetworkManager::new_script_event(librg_message_t* msg)
 	librg_data_rptr(msg->data, &message, sizeof(message));
 
 	printf("Create new script: %s\n\n", message.CodeString);
-	//CurrentScript = message.CodeString;
 	memcpy(CurrentScript, message.CodeString, 1024);
 }
 

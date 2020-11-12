@@ -99,11 +99,29 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 	bool missing = false;
 
 	TCHAR _altPath[MAX_PATH];
-
 	GetCurrentDirectory(MAX_PATH, _altPath);
-
 	std::wstring altPath = std::wstring(_altPath);
 	//alt::Log::Instance().AddOut(new alt::Log::FileStream(altPath + L"\\logs\\launcher.log"));
+
+	/*for (std::wstring& file : requiredFiles)
+	{
+		if (!File::Exists(file))
+		{
+			if (!missing)
+			{
+				ss << L"The following files are missing:" << std::endl;
+				missing = true;
+			}
+
+			ss << L"  - " << file << std::endl;
+		}
+	}
+
+	if (missing)
+	{
+		MessageBox(NULL, ss.str().c_str(), L"Installation corrupted", MB_OK | MB_ICONERROR);
+		return 1;
+	}*/
 
 	Gdiplus::GdiplusStartupInput gdiplusStartupInput;
 	ULONG_PTR gdiplusToken;
@@ -114,13 +132,27 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 	auto& config = CConfig::Instance();
 	auto& injector = CInjector::Instance();
 
+/*
+#ifdef _DEBUG
+	injector.PushLibrary(L"windowed.dll");
+#endif
+*/
+
+	//injector.PushLibrary(L"vorbisFile.dll");
+    //injector.PushLibrary(L"minidump.dll");
+	injector.PushLibrary(L"libs\\lua5.1.dll");
+    injector.PushLibrary(L"client.dll");
+    //injector.PushLibrary(L"openLA.dll");
+
+	window.Init(hInstance);
+
 	// Load config
 	if (!config.Load(L"config.json"))
 	{
 		TCHAR path[MAX_PATH];
 
 		BROWSEINFO bi = { 0 };
-		bi.lpszTitle = L"Select your installation of GTA: San Andreas...";
+		bi.lpszTitle = L"Select your installation of Grand Theft Auto San Andreas...";
 		bi.ulFlags = BIF_RETURNONLYFSDIRS | BIF_NEWDIALOGSTYLE;
 		bi.lpfn = BrowseCallbackProc;
 		bi.lParam = (LPARAM)L"";
@@ -143,37 +175,12 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 		}
 	}
 
+
+	gtapath = config.GetPath();
+
 	// Open loading window
 	ShowWindow(window.GetHwnd(), nCmdShow);
 	UpdateWindow(window.GetHwnd());
-
-	window.Init(hInstance);
-
-	for (std::wstring& file : requiredFiles)
-	{
-		if (!File::Exists(file))
-		{
-			if (!missing)
-			{
-				ss << L"The following files are missing:" << std::endl;
-				missing = true;
-			}
-
-			ss << L"  - " << file << std::endl;
-		}
-
-		injector.PushLibrary(file);
-	}
-
-	if (missing)
-	{
-		window.Destroy();
-
-		MessageBox(NULL, ss.str().c_str(), L"Installation corrupted", MB_OK | MB_ICONERROR);
-		return 1;
-	}
-
-	gtapath = config.GetPath();
 
 	std::thread([&] {
 		MSG msg;
@@ -187,7 +194,6 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 
 	window.Destroy();
 	Gdiplus::GdiplusShutdown(gdiplusToken);
-
 	// Run and inject
 	if (!injector.Run(config.GetPath(), altPath))
 		MessageBox(NULL, L"Failed to load alt:SA Client\nSee client.log", L"alt:SA Load Error", MB_OK | MB_ICONERROR);

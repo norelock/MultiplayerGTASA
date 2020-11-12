@@ -1,13 +1,13 @@
 #pragma once
 
-// DO NAPRAWY!!!!!!
-
 #include <string>
 #include <iomanip>
 #include <codecvt>
 #include <vector>
 
 #include "CSingleton.h"
+
+// DO NAPRAWY
 
 #ifdef _DEBUG
 	#define __logtrace() (Log::Debug << "File: " << __FILE__ << ", function: " << __FUNCTION__ << ", line: " << __LINE__ << Log::Endl)

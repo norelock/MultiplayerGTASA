@@ -15,7 +15,11 @@ static std::vector<std::pair<int, std::wstring>> supportedVersions =
 
 static std::vector<std::wstring> requiredFiles = 
 {
-	L"libs\\vorbisFile.dll",
-	L"libs\\lua5.1.dll",
-	L"client.dll"
+	L"libs\\client.dll",
+	L"libs\\openLA.dll",
+	L"libs\\minidump.dll",
+#ifdef _DEBUG
+	L"libs\\windowed.dll",
+#endif
+	L"res\\custom.txd",
 };

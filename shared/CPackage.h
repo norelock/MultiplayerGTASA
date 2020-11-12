@@ -5,6 +5,8 @@
 #include <fstream>
 #include <vector>
 
+// DO NAPRAWY, TRZEBA POSZUKAÆ BLIBIOTEKI
+
 class CPackage
 {
 public:

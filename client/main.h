@@ -83,7 +83,7 @@ using namespace plugin;
 
 //MAX_PLAYERS_NUM for internal usage
 //player on index 1 is buggy, reserverd for coop leftover in the game
-#define MAX_PLAYERS_NUM 260
+#define MAX_PLAYERS_NUM 300
 
 // dear imgui
 #include "imgui.h"
@@ -100,12 +100,13 @@ using namespace plugin;
 #include "entities/CVehicleManager.h"
 #include "entities/CPedManager.h"
 #include "entities/CPlayerPedManager.h"
-//#include "gamelogic/CPopulationManager.h"
 //#include "rendering/debug/CDebugScreen.h"
 #include "rendering/ingame/CNameTags.h"
 #include "rendering/ingame/CChat.h"
 
 #include "tasks/CTaskSerializer.h"
+
+//#include "gamelogic/CPopulationManager.h"
 
 //shared
 #include "types.h"
