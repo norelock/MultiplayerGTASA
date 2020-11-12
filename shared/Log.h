@@ -1,6 +1,6 @@
 #pragma once
 
-// DO NAPRAWY!!!!
+// DO NAPRAWY!!!!!!
 
 #include <string>
 #include <iomanip>

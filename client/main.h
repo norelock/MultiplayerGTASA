@@ -100,7 +100,7 @@ using namespace plugin;
 #include "entities/CVehicleManager.h"
 #include "entities/CPedManager.h"
 #include "entities/CPlayerPedManager.h"
-#include "gamelogic/CPopulationManager.h"
+//#include "gamelogic/CPopulationManager.h"
 //#include "rendering/debug/CDebugScreen.h"
 #include "rendering/ingame/CNameTags.h"
 #include "rendering/ingame/CChat.h"
@@ -121,7 +121,6 @@ using namespace plugin;
 #include "networking/entities/CClientPlayer.h"
 #include "networking/entities/CClientVehicle.h"
 #include "networking/entities/CNetworkEntityManager.h"
-
 
 // scripting languages
 // Lua
