@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include <shlobj.h>
 
+#include "Log.h"
+
 #pragma comment(lib, "version.lib")
 
 static int CALLBACK BrowseCallbackProc(HWND hwnd, UINT uMsg, LPARAM lParam, LPARAM lpData)
@@ -101,24 +103,34 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 	TCHAR _altPath[MAX_PATH];
 	GetCurrentDirectory(MAX_PATH, _altPath);
 	std::wstring altPath = std::wstring(_altPath);
-	//alt::Log::Instance().AddOut(new alt::Log::FileStream(altPath + L"\\logs\\launcher.log"));
+	//alt::Log::Instance();
 
 	Gdiplus::GdiplusStartupInput gdiplusStartupInput;
 	ULONG_PTR gdiplusToken;
 
 	Gdiplus::GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, NULL);
 
+	// Creating the logger instance & making out file log
+	auto& logger = Log::Instance();
+	logger.AddOut(new Log::FileStream(altPath + L"\\logs\\launcher.log"));
+
+	// Creating window instance
 	auto& window = CLoadingWindow::Instance();
+
+	// Creating config instance
 	auto& config = CConfig::Instance();
+
+	// Creating injector instance
 	auto& injector = CInjector::Instance();
 
+	// Initializing window
 	window.Init(hInstance);
 
-	// Open loading window
+	// Open loading window & update it
 	ShowWindow(window.GetHwnd(), nCmdShow);
 	UpdateWindow(window.GetHwnd());
 
-	// Load required libraries from defined list
+	// Load required libraries from defined list and push to injector
 	for (std::wstring& file : requiredFiles)
 	{
 		if (!File::Exists(file))
@@ -133,6 +145,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 		}
 
 		injector.PushLibrary(file);
+		logger.Put(logger.Time, " Pushed library as memory", file.c_str(), logger.Endl);
 	}
 
 	// If files don't exists or are missing then we throwing the error window
@@ -173,6 +186,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 		}
 	}
 
+	// Getting game path from config file
 	gtapath = config.GetPath();
 
 	std::thread([&] {
@@ -188,7 +202,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 	window.Destroy();
 	Gdiplus::GdiplusShutdown(gdiplusToken);
 
-	// Run and inject
+	// Run game and inject libraries
 	if (!injector.Run(config.GetPath(), altPath))
 		MessageBox(NULL, L"Failed to load Render Multiplayer client\nSee client.log", L"Load Error", MB_OK | MB_ICONERROR);
 	

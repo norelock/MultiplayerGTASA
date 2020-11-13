@@ -1,5 +1,5 @@
 /build
 /.vs
-/client/.obj
-/launcher/.obj
-/server/.obj
+/client/.obj/
+/launcher/.obj/
+/server/.obj/
