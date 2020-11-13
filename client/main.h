@@ -90,35 +90,40 @@ using namespace plugin;
 #include "examples\imgui_impl_dx9.h"
 #include "examples\imgui_impl_win32.h"
 
-//sandbox
-#include "config.h"
+// rendermp
+
+// game options
 #include "options/COptions.h"
-#include "rendering/imgui/CImGui.h"
-#include "rendering/CRenderManager.h"
+
+// game models
 #include "models/CModelManager.h"
+
+// game entities
 #include "entities/sub/CWeaponManager.h"
 #include "entities/CVehicleManager.h"
 #include "entities/CPedManager.h"
 #include "entities/CPlayerPedManager.h"
+
+// rendering ingame
+#include "rendering/imgui/CImGui.h"
+#include "rendering/CRenderManager.h"
 //#include "rendering/debug/CDebugScreen.h"
 #include "rendering/ingame/CNameTags.h"
 #include "rendering/ingame/CChat.h"
 
+// game tasks
 #include "tasks/CTaskSerializer.h"
 
-//#include "gamelogic/CPopulationManager.h"
-
 //shared
-#include "types.h"
+#include "types.h" 
+#include "Log.h"
+#include "config.h"
 #include "entities\CNetworkEntity.h"
 #include "entities\CNetworkPlayer.h" 
-#include "entities\CNetworkVehicle.h" 
-#include "config.h"
+#include "entities\CNetworkVehicle.h"
 
-//client
+// networking manager & networking entities
 #include "networking/CNetworkManager.h"
-
-//entities
 #include "networking/entities/CClientPlayer.h"
 #include "networking/entities/CClientVehicle.h"
 #include "networking/entities/CNetworkEntityManager.h"
@@ -138,6 +143,5 @@ extern LRESULT CALLBACK wnd_proc(HWND wnd, UINT umsg, WPARAM wparam, LPARAM lpar
 extern LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 extern std::vector<bool(__cdecl*)(unsigned int)> Patch_Funcs; // bool(__cdecl*)(unsigned int Address)
-
 
 void printStack(void);
