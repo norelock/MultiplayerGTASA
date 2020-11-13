@@ -15,7 +15,7 @@
 #else
 #define PROJECT_TYPE					"server"
 #endif
-#define PROJECT_INFO					PROJECT_NAME " " PROJECT_TYPE " v" VERSION_DATA " - " __DATE__ " - " __TIME__ "\n"
+#define PROJECT_INFO					PROJECT_NAME " " PROJECT_TYPE " v" VERSION_DATA " (bulit on " __DATE__ " @ " __TIME__ ")\n"
 
 // Default server tick delay
 #define SERVER_TICK_DELAY				16

@@ -71,14 +71,15 @@ void __fastcall CTaskManager__SetTask_Hook(CTaskManager * This, DWORD EDX, CTask
 {
 	if (FindPlayerPed(0) == This->m_pPed)
 	{
+		//if ()
 		if (task)
 		{
-			/*int taskID = task->GetId();
-			if (taskID == eTaskType::TASK_COMPLEX_JUMP)
+			int taskID = task->GetId();
+			/*if (taskID == eTaskType::TASK_COMPLEX_JUMP)
 			{
 				CNetworkEntityManager::localPlayer->SendTaskEvent(eTaskEventType::TASK_EVENT_JUMP);
-			}
-			printf("New task for player ped: %d: %s\n", taskID, TaskNames[taskID]);*/
+			}*/
+			printf("New task for player ped: %d: %s\n", taskID, TaskNames[taskID]);
 		}
 		else
 		{
@@ -96,10 +97,10 @@ void __fastcall CTaskManager__SetTaskSecondary_Hook(CTaskManager * This, DWORD E
         if (task)
         {
             int taskID = task->GetId();
-            if (taskID == eTaskType::TASK_SIMPLE_DUCK)
+            /*if (taskID == eTaskType::TASK_SIMPLE_DUCK)
             {
                 CNetworkEntityManager::localPlayer->SendTaskEvent(eTaskEventType::TASK_EVENT_DUCK);
-            }
+            }*/
             printf("New task for player ped: %d: %s\n", taskID, TaskNames[taskID]);
         }
         else

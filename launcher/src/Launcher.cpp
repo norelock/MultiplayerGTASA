@@ -97,18 +97,9 @@ static int GetGTAVersion()
 
 int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
-	std::wstringstream ss;
-	bool missing = false;
-
 	TCHAR _altPath[MAX_PATH];
 	GetCurrentDirectory(MAX_PATH, _altPath);
 	std::wstring altPath = std::wstring(_altPath);
-	//alt::Log::Instance();
-
-	Gdiplus::GdiplusStartupInput gdiplusStartupInput;
-	ULONG_PTR gdiplusToken;
-
-	Gdiplus::GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, NULL);
 
 	// Creating the logger instance & making out file log
 	auto& logger = Log::Instance();
@@ -122,6 +113,14 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 
 	// Creating injector instance
 	auto& injector = CInjector::Instance();
+
+	std::wstringstream ss;
+	bool missing = false;
+
+	Gdiplus::GdiplusStartupInput gdiplusStartupInput;
+	ULONG_PTR gdiplusToken;
+
+	Gdiplus::GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, NULL);
 
 	// Initializing window
 	window.Init(hInstance);

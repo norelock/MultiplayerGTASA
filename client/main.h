@@ -22,7 +22,7 @@
 #include <DbgHelp.h>
 
 using namespace plugin;
- 
+
 //system
 #include <iostream>
 #include <ostream>
@@ -90,43 +90,37 @@ using namespace plugin;
 #include "examples\imgui_impl_dx9.h"
 #include "examples\imgui_impl_win32.h"
 
-// rendermp
-
-// game options
+// render multiplayer code
+#include "config.h"
 #include "options/COptions.h"
-
-// game models
+#include "rendering/imgui/CImGui.h"
+#include "rendering/CRenderManager.h"
 #include "models/CModelManager.h"
-
-// game entities
 #include "entities/sub/CWeaponManager.h"
 #include "entities/CVehicleManager.h"
 #include "entities/CPedManager.h"
 #include "entities/CPlayerPedManager.h"
-
-// rendering ingame
-#include "rendering/imgui/CImGui.h"
-#include "rendering/CRenderManager.h"
 //#include "rendering/debug/CDebugScreen.h"
 #include "rendering/ingame/CNameTags.h"
 #include "rendering/ingame/CChat.h"
 
-// game tasks
 #include "tasks/CTaskSerializer.h"
 
 //shared
-#include "types.h" 
-#include "Log.h"
-#include "config.h"
+#include "types.h"
 #include "entities\CNetworkEntity.h"
 #include "entities\CNetworkPlayer.h" 
-#include "entities\CNetworkVehicle.h"
+#include "entities\CNetworkVehicle.h" 
+#include "config.h"
 
-// networking manager & networking entities
+//client
 #include "networking/CNetworkManager.h"
+
+//entities
 #include "networking/entities/CClientPlayer.h"
 #include "networking/entities/CClientVehicle.h"
 #include "networking/entities/CNetworkEntityManager.h"
+
 
 // scripting languages
 // Lua
@@ -143,5 +137,6 @@ extern LRESULT CALLBACK wnd_proc(HWND wnd, UINT umsg, WPARAM wparam, LPARAM lpar
 extern LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 extern std::vector<bool(__cdecl*)(unsigned int)> Patch_Funcs; // bool(__cdecl*)(unsigned int Address)
+
 
 void printStack(void);
