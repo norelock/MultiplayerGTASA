@@ -1,10 +1,3 @@
-﻿  CLog.cpp
-  CNetworkEntityManager.cpp
-  CNetworkManager.cpp
-  server.cpp
-  Generating code
-  All 785 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
-  Finished generating code
-  server.vcxproj -> C:\Users\Norbert\Desktop\borsuk-mp\build\release\server\server.exe
-  C:\Users\Norbert\Desktop\borsuk-mp\build\release\server\server.exe
+﻿  server.vcxproj -> C:\Users\Norbert\Desktop\render-multiplayer\build\release\server\server.exe
+  C:\Users\Norbert\Desktop\render-multiplayer\build\release\server\server.exe
   1 File(s) copied
